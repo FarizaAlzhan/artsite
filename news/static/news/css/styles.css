@@ -1,0 +1,102 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 14px 6px;
+    padding-left: 36px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+}
+.sidenav .logo {
+    width: 50px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+
+}
+.sidenav a:hover {
+    color: #e85973;
+    text-decoration:none;
+}
+
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    background-color: #111;
+    }
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+.img-article-left {
+	height: auto;
+	padding-left: 440px;
+	padding-bottom: 140px;
+	padding-right: 310px;
+	font-size: 14px;
+	color:white;
+}
+.postsfoto {
+    width:300px;
+}
+
+.textabout {
+    width: 1300px;
+    padding-left: 268px;
+    padding-top: 39px;
+    }
+
+.titleposts a {
+
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+}
+.titleposts {
+
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+}
+.titleposts a:hover {
+    color: #e85973;
+    text-decoration:none;
+}
+
+.coments a:hover {
+    color: #f1f1f1;
+    text-decoration:none;
+
+}
+
+
+
+
+
+
+
+
+

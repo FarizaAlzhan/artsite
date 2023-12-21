@@ -1,0 +1,33 @@
+{% extends 'news/index.html' %}
+
+{% block content %}
+<style>
+    .textabout {
+      padding-left: 420px;
+      padding-right: 450px;
+
+    }
+    .formst{
+    padding-left: 80px;
+    padding-right: 15px;
+    padding-top: 60px;
+      width:500px;
+    }
+
+</style>
+
+<div class="textabout">
+<div class="container mt-5">
+    <div class="card" style="background-color:#cacaca87; width: 38rem; height:25rem; border-radius:5%; border: 2px solid #00000;">
+  <div class="card-body">
+    <form class="formst" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style="border-radius:10%; width:80px; " class="btn btn-outline-light" type="submit">Войти</button>
+    Нет аккаунта ?<a style="text-decoration:none; color:black;" href="{% url 'register' %}" class="btn" type="button">Зарегистрироваться</a>
+</form>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

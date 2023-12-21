@@ -1,0 +1,15 @@
+{% extends 'news/index.html' %}
+
+{% block content %}
+
+
+    <div  class="img-article-left" >
+          <h3 style="padding-top:20px; ">{{post.title}}</h3>
+{% if post.photo %}
+<p><img  src="{{post.photo.url}}"></p>
+{% endif %}
+        <h6 style="color:grey;">{{post.time_create}}</h6>
+{{post.content|linebreaks}}<hr>
+    </div>
+
+{% endblock %}

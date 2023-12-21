@@ -1,0 +1,42 @@
+{% extends 'news/index.html' %}
+{% block content %}
+<style>
+.maintextabout {
+    width: 1000px;
+    padding-top: 5px;
+    position:absolute;
+    right:120px;
+    left:240px;
+    }
+
+.maincards {
+    padding-top:60px;
+}
+
+</style>
+<div class="maintextabout">
+    <h3 style="color:white; padding-left:340px;">Свежие новости</h3>
+
+        <img src="https://s0.rbk.ru/v6_top_pics/media/img/3/51/347017820374513.webp" >
+        <h3 style=" color:white; position:absolute;  left:33px; bottom: 647px;">Объявлена дата выхода последней серии нашумевшего сериала «Слово пацана»</h3>
+        <p style="color:white; position:absolute;   left:33px; bottom: 600px; ">Как сообщил режиссер, завершающая серия выйдет, как и планировалось изначально, в четверг, 21 декабря.</p>
+<div class="maincards">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+         {% for p in  posts %}
+      <div class="cell">
+         <p><img class="postsfoto" src="{{p.photo.url}}"></p>
+          <div class="titleposts">
+            <a href= "{% url 'post' p.slug %}">{{p.title}}</a>
+          </div>
+          <p>{{p.content|linebreaks| truncatewords:0}}</p>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+

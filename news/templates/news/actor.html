@@ -1,0 +1,23 @@
+{% extends 'news/index.html' %}
+{% block content %}
+
+<div class="textabout">
+   <div class="grid-container">
+    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+         {% for p in  posts %}
+      <div class="cell">
+         <p><img class="postsfoto" src="{{p.photo.url}}"></p>
+          <div class="titleposts" >
+            <a href= "{% url 'postactor' p.slug %}">{{p.title}}</a>
+          </div>
+          <p>{{p.content|linebreaks| truncatewords:0}}</p>
+      </div>
+        {% endfor %}
+</div>
+   </div>
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Главная страница</title>
+    <link type="text/css" href="{% static 'news/css/styles.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
+   <style>
+.top-bar, .top-bar ul {
+    background-color: #111;
+}
+ .text1about{
+    padding-left:250px;
+ }
+   </style>
+</head>
+
+<div class="sidenav" >
+    <a href="{%url 'home' %}"><img style="width: 80px;" class="logo" src= " {% static 'news/images/artnews.png' %} "></a>
+
+    <a href="{%url 'kino' %}">Кино</a>
+
+
+    <a href="{%url 'music' %}">Музыка</a>
+
+    <a href="{%url 'actor' %}">Знаменитости</a>
+    <a href="{%url 'about' %}" >О нас</a>
+     {% if request.user.is_authenticated %}
+    <a href="#">{{user.username}}</a>
+    <a href="{% url 'logout' %}" >Выйти</a>
+
+    {% else %}
+    <a href="{%url 'login' %}">Войти</a>
+    {% endif %}
+
+</div>
+<div class="text1about">
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu data-dropdown-menu" >
+          <li><a style="width:60px; height:50px;" href="#"><img src= " {% static 'news/images/phone-call.png' %}" alt="call"></a></li>
+         <a style="font-size:12px;  color: white; text-decoration:none; padding-top:21px; padding-left: 0px;" href="#">8777 700 77 70</a>
+          <li><a style="width:75px; height:50px; padding-top:1px; " href="#"><img src= " {% static 'news/images/email.png' %} " alt="call"></a></li>
+          <li><a  style="font-size:13px; color: white; text-decoration:none; padding-top:20px; padding-left: 0px;" href="#">art@gmail.com</a></li>
+          <li><a style=" padding-right:490px; width:55px; height:50px; padding-top:13px; " href="#"><img src= " {% static 'news/images/telegram.png' %} " alt="telegram"></a></li>
+          <li><a style=" padding-right:13px; width:55px; height:50px; padding-top:13px; " href="https://t.me/+0d5Hqs3Y1BA2NmEy"><img src= " {% static 'news/images/telegram.png' %} " alt="telegram"></a></li>
+          <li><a style=" padding-right:13px; width:55px; height:50px; padding-top:13px; " href="#"><img src= " {% static 'news/images/instagram.png' %} " alt="instagram"></a></li>
+          <li><a style=" padding-right:13px; width:55px; height:50px; padding-top:13px; " href="#"><img src= " {% static 'news/images/facebook.png' %} " alt="facebook"></a></li>
+          <li><a style=" padding-right:13px; width:55px; height:50px; padding-top:13px; " href="#"><img src= " {% static 'news/images/youtube.png' %} " alt=""></a></li>
+      </ul>
+  </div>
+</div>
+</div>
+<div class="main">
+</div>
+<body style="background-color:#111;">
+{% block content %}
+{% endblock %}
+</body>
+</html>
+

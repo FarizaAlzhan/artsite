@@ -1,0 +1,113 @@
+{% extends 'news/index.html' %}
+{% block content %}
+{% load static %}
+<style>
+     .aboutPhon{
+     background-color:white;
+     }
+     .coments {
+      width: 1156px;
+      padding-left: 445px;
+      padding-top: 590px;
+
+    }
+
+    .text1{
+    padding:55px 600px 2px 50px;
+    position: absolute;
+    left: 250px;
+
+    }
+    .image1{
+    padding:0px 50px 3px 800px;
+
+    }
+
+      .text2{
+    padding:70px 50px 3px 800px;
+    position: absolute;
+    right: 20px;
+
+    }
+    .image2{
+    padding-left:50px;
+    width:440px;
+    position: absolute;
+    left: 250px;
+    }
+
+    .rubrika{
+    padding-top:300px;
+    position:absolute;
+    left:650px;
+    }
+    .rubrika .imgkino{
+    position:absolute;
+    right:250px;
+    }
+    .rubrika .imgmuz{
+    width: 130px;
+    position:absolute;
+    right:20px;
+    }
+    .rubrika .imgactor{
+    width: 140px;
+    position:absolute;
+    left:350px;
+    }
+
+</style>
+<div class="aboutPhon">
+
+<div class="text1">
+       <text>
+           <B>Добро пожаловать на наш новостной портал</B>, где страсть к развлечениям и культуре сочетается с самыми свежими и актуальными новостями из мира кино, музыки и знаменитостей. Мы стремимся быть вашим первым источником информации о захватывающих трендах в индустрии развлечений.
+       </text>
+</div>
+ <div class="image1">
+        <img src= " {% static 'news/images/image1.png' %} " alt="call">
+ </div>
+
+<div class="text2">
+        <text>
+            <B>Наши редакторы,</B> журналисты и критики тщательно следят за всеми событиями, чтобы предоставить вам самую последнюю информацию и интересные материалы о вашем любимом кино, музыке и знаменитостях. Мы гордимся тем, что обеспечиваем вас всем, что происходит в мире развлечений, от свежих новостей до захватывающих интервью и обзоров
+        </text>
+</div>
+<div class="image2">
+    <img src= " {% static 'news/images/image2-1.png' %} ">
+</div>
+<div class="rubrika">
+    <h3>Наши рубрики</h3>
+    <img class="imgkino" src=" {% static 'news/images/imgkino.png' %} "><h4 style="position:absolute; right:320px; top:500px; padding-bottom: 120px;"> Кино </h4>
+    <img class="imgmuz" src=" {% static 'news/images/imgmuz.png' %} "> <h4 style="position:absolute; right:35px; top:500px;"> Музыка</h4>
+    <img class="imgactor" src=" {% static 'news/images/imgactor.png' %} "><h4 style="position:absolute; left:350px; top:500px;"> Знаменитости </h4>
+</div>
+
+<div class="coments">
+   <div class="grid-container" style="padding-bottom: 200px;">
+       <h4>
+           Комментарии:
+       </h4>
+
+    <button style="border-radius:10%; width:100px; position:absolute; left:1055px; top: 940px; " class="btn btn-dark" type="submit">
+        <a style=" text-decoration:none; color:white;" href="{%url 'addpage' %}">Добавить</a>
+    </button>
+
+       <hr>
+       {% for p in  posts %}
+
+        <div class="card" style="height:70px;" >
+         <div class="card-section">
+            <p>{{p.content|linebreaks| truncatewords:20}}</p>
+          </div>
+        </div>
+
+ {% endfor %}
+
+   </div>
+</div>
+
+</div>
+{% endblock %}
+
+

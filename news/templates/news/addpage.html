@@ -1,0 +1,36 @@
+{% extends 'news/index.html' %}
+
+{% block content %}
+<style>
+    .textabout {
+      padding-left: 355px;
+      padding-right: 50px;
+      padding-top: 55px;
+
+    }
+    .formst{
+    padding-left: 90px;
+    padding-right: 25px;
+    padding-top: 100px;
+    width:500px;
+    }
+
+
+</style>
+
+<div class="textabout">
+<div class="container mt-5">
+    <div class="card" style=" background-color:#9f9f9f3b; width: 38rem; height:23rem; border-radius:5%; border: 2px solid #00000;">
+  <div class="card-body">
+    <form class="formst" action="{% url 'addpage' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+
+    <button style="border-radius:10%; width:95px; " class="btn btn-outline-light" type="submit">Добавить</button>
+</form>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
